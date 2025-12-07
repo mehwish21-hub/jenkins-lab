@@ -8,9 +8,8 @@ pipeline {
         }
         stage('Run Ansible') {
             steps {
-                sh 'ansible-playbook -i "192.168.43.129," deploy.yml --user mmvm2'
+                sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i "192.168.43.129," deploy.yml --user mmvm2'
             }
         }
     }
 }
-
