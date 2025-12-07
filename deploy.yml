@@ -3,5 +3,5 @@
   tasks:
     - name: Copy file to VM2
       copy:
-        remote_src: /home/mmvm1/jenkins-lab/test.txt
+        src: /var/lib/jenkins/workspace/pip/test.txt
         dest: /home/mmvm2/test.txt
