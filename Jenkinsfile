@@ -1,10 +1,16 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Checkout') {
             steps {
-                echo 'Hey bestie, your pipeline is RUNNING!'
+                git branch: 'main', url: 'https://github.com/mehwish21-hub/jenkins-lab.git'
+            }
+        }
+        stage('Run Ansible') {
+            steps {
+                sh 'ansible-playbook -i "192.168.43.129," deploy.yml --user mmvm2'
             }
         }
     }
 }
+
